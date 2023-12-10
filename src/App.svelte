@@ -3,7 +3,6 @@
 	import CardContainer from "./components/Card/CardContainer.svelte";
 	import AdditionalDomainsList from "./components/AdditionalDomainsList/AdditionalDomainsList.svelte";
 	import Filters from "./components/Header/components/Filters.svelte";
-	import { pxToEm, css } from './utils'
 	import { suggestionsTypeStore } from './store/store.js'
 	import { onDestroy } from "svelte";
 
@@ -22,7 +21,7 @@
 
 <main >
 	<div class="block">
-		<h1 use:css={{fontSize: `${pxToEm(60)}em`}}>
+		<h1>
 			{title.toUpperCase()}
 		</h1>
 
@@ -40,7 +39,7 @@
 <style>
 	main {
 		text-align: center;
-		margin: 0 auto;
+		margin: 0.25em auto;
 		font-size: calc(100% / 10);
 	}
 
@@ -48,6 +47,8 @@
 		color: #1064e3;
 		font-weight: 700;
 		font-family: sans-serif;
+		font-size: 2em;
+		margin: 0;
 	}
 
 	.block {

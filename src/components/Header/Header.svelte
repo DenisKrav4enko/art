@@ -104,6 +104,7 @@
         color: #fff;
         margin: 0;
         cursor: pointer;
+        white-space: nowrap;
     }
 
     .tab-container {
