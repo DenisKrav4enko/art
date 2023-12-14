@@ -2,7 +2,7 @@
 	import Header from "./components/Header/Header.svelte";
 	import CardContainer from "./components/Card/CardContainer.svelte";
 	import AdditionalDomainsList from "./components/AdditionalDomainsList/AdditionalDomainsList.svelte";
-	import Filters from "./components/Header/components/Filters.svelte";
+	import Filters from "./components/Filters/Filters.svelte";
 	import { suggestionsTypeStore } from './store/store.js'
 	import { onDestroy } from "svelte";
 

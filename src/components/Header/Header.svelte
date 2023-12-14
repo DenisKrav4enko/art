@@ -2,13 +2,18 @@
     import { checkDomains } from '../../functions/actions/checkDomains.js';
     import { pxToEm, css } from '../../utils'
     import {setSearchNamesStore, setSuggestionsType} from '../../store/store.js'
+    import { onlyLatinasAndNumbersSymbols } from '../../utils/parsers'
 
-    let searchValue = '123, test art, love';
+    let searchValue = 'love sex robot 123';
     let searchType = 'default';
 
     const handleSubmit = () => {
         searchValue.length && checkDomains(searchValue, searchType)
     }
+
+    const handleInput = (event) => {
+        searchValue = onlyLatinasAndNumbersSymbols(event.target.value);
+    };
 
     $: setSuggestionsType(searchType);
     $: setSearchNamesStore(searchValue);
@@ -35,6 +40,7 @@
                 class="search-input"
                 type="text"
                 bind:value={searchValue}
+                on:input={handleInput}
                 placeholder="Find your domain"
         >
         <button

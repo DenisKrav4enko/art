@@ -1,12 +1,15 @@
 import { TOKEN, API_PATH } from './env.js';
-import { setDomains } from '../../store/store.js';
+import { setDomains, suggestionsStore } from '../../store/store.js';
 import { suggestionsDomain } from "./suggestionsDomain.js";
+import { formatDomain } from "../../utils/parsers";
 
 export const checkDomains = async (searchValue, searchType) => {
     const domains = searchValue.split(/[\s,]+/);
-    const domainsQuery = domains.map((domain) => `${domain}.art`);
+    const domainsQuery = domains.map((domain) => formatDomain(domain));
 
     try {
+        suggestionsStore.set([]);
+
         const response = await fetch(`${API_PATH}domains/check?${domainsQuery.map(domain => `domains[]=${domain}`).join('&')}`, {
             method: 'GET',
             headers: {

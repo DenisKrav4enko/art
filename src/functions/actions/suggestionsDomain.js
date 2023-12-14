@@ -20,7 +20,7 @@ export const suggestionsDomain = async (domain, searchType, filters) => {
                 limitRange,
                 offsetRange,
             } = filters
-            console.log(filters);
+
             endpoint = `${API_PATH}domains/premiums?name=${domain}&nameMatch=${nameMatch}&priceMin=9.95&priceMax=9.95&symbolsMin=1&symbolsMax=10&available=${available}&reserved=${reserved}&referral=${referral}&limit=${limitRange}&offset=${offsetRange}`;
             break;
         default:

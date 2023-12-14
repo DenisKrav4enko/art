@@ -18,12 +18,19 @@ export const addSuggestions = (newSuggestions) => {
     suggestionsStore.update(existingSuggestions => [...existingSuggestions, ...newSuggestions]);
 };
 
-export const filtersStore = writable({});
+export const filtersStore = writable({
+    nameMatch: 'partial',
+    available: true,
+    reserved: false,
+    referral: false,
+    limitRange: 20,
+    offsetRange: 0
+});
 export const setFiltersStore = (newFilters) => {
     filtersStore.set(newFilters)
 }
 
-export const searchNamesStore = writable('');
+export const searchNamesStore = writable('default');
 export const setSearchNamesStore = (newSearchNames) => {
     searchNamesStore.set(newSearchNames)
 }

@@ -26,7 +26,7 @@
 <div class="domain-list">
     {#if domainsList.length > 0}
         {#each domainsList as domain, index (domain.name)}
-            {#if domain.price !== null && domain.available}
+            {#if domain.price !== null}
                 {#if selectedDomainIndex === index}
                     <DomainCardDetails selectedDomain={domain} />
                 {:else}

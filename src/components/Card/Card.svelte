@@ -35,7 +35,7 @@
     >
         {item.name}
     </h2>
-    <p class="{item.premium ? 'premium' : 'standard'}">${item.price}</p>
+    <p class="{item.premium ? 'premium-price' : 'standard-price'}">${item.price}</p>
     <p class="{item.available ? 'available' : 'unavailable'}">{item.available ? 'Available' : 'Unavailable'}</p>
 </div>
 
@@ -66,15 +66,15 @@
         margin-right: 0.5em;
     }
 
-    .premium-tag {
+    .premium {
         background-color: #f0e68c;
     }
 
-    .reserved-tag {
+    .reserved {
         background-color: #ffb6c1;
     }
 
-    .bought-tag {
+    .bought {
         background-color: #90ee90;
     }
 
@@ -88,7 +88,7 @@
         font-weight: bold;
     }
 
-    .premium {
+    .premium-price {
         background-color: #f0e68c;
         color: #333;
         font-weight: bold;
@@ -96,7 +96,7 @@
         border-radius: 0.25em;
     }
 
-    .standard {
+    .standard-price {
         background-color: #fff;
         color: #333;
         font-weight: bold;
